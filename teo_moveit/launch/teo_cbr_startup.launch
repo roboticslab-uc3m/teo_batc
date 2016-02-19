@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- Code for the launch file for the TEO CBR new task generation system
+	 Author: Raúl Fernández Fernández
+	 The main goal of this code is just launch all the node for the system -->
+
+	<!-- Startup TEO with moveit -->
+	<include file="$(find Teo_moveit_config)/launch/demo.launch"/>
+
+	<!-- Node that is in charge of store and execute all the atomic actions of the Robot -->
+	<node pkg="teo_moveit" type="atomic_task_memory" name="atomic_task_memory" output="screen"/>
+
+	<!-- Node that is in charge of the communication with the user -->
+	<node pkg="teo_moveit" type="communication" name="communication" output="screen"/>
+
+	<!-- Node that is in charge of the new task generation -->
+	<node pkg="teo_moveit" type="teo_task_template" name="teo_task_template" output="screen"/>
+
+	<!-- Node that is in charge of the base solution generation -->
+	<!--<node pkg="teo_moveit" type="base_solution" name="base_solution" output="screen" launch-prefix="xterm -e gdb args"/> -->
+        <node pkg="teo_moveit" type="base_solution" name="base_solution" output="screen"/>
+
+	<!-- Node that is in charge of store and execute all the atomic actions of the Robot 
+	<node pkg="teo_moveit" type="teo_moveit" name="central_node" output="screen"/> -->
+
+</launch>
+
+

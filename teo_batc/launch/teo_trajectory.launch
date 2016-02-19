@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- /* This code is part of the project "NEW TASK GENERATION FOR HUMANOID ROBOTS BASED ON CASE RETRIEVAL AND USER COMMUNICATION"
+
+	 Author: Raúl Fernández Fernández (raulpecam@hotmail.com)
+ 
+	 The main goal of this code is launch the trajectory generator and execution of the system -->
+
+
+	<!-- Node that is in charge of the trajectory generation -->
+        <node pkg="teo_batc" type="main_trajectory.py" name="main_trajectory" output="screen"/>
+
+	<!-- Node that is in charge of store and execute all the atomic actions of the Robot-->
+	<node pkg="teo_batc" type="central_node_trajectory" name="central_node_trajectory" output="screen"/> 
+
+</launch>
+
+

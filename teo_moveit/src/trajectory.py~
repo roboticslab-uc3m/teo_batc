@@ -1,0 +1,29 @@
+#The main objective of this node will be to generate the points for the primitive trajectories
+
+import sys
+import rospy
+from move_group_srv.srv import *
+from geomety_msgs.msg import pose_stamped
+from std_msgs.msg import string
+
+
+    rospy.init_node('service_client')
+    print("waiting for service")
+    rospy.wait_for_service('move_group_srv')
+    move_group_client = rospy.ServiceProxy('move_group_srv', move_group_srv)
+    
+    # pose_stamped p_taza;
+    p_taza.header.frame_id = "base_link"
+    p_taza.pose.position.x = 0.41508
+    p_taza.pose.position.y = -0.44088
+    p_taza.pose.position.z = 0.37607
+    p_taza.pose.orientation.x = 0.32493
+    p_taza.pose.orientation.y = 0.00081521
+    p_taza.pose.orientation.z = -0.00032667
+    p_taza.pose.orientation.w = 0.94574
+    group_name= "right_arm"
+    pos_tolerance= 0.01
+    ang_tolerance= 0.1
+  
+    #We call the service
+    move_group_client(p_taza,group_name,pos_tolerance, ang_tolerance)

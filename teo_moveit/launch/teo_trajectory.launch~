@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- Code for the launch file for the TEO CBR new task generation system
+	 Author: Raúl Fernández Fernández
+	 The main goal of this code is launch the trajectory generator and execution of the system -->
+
+
+	<!-- Node that is in charge of the trajectory generation -->
+        <node pkg="teo_moveit" type="main_trajectory.py" name="main_trajectory" output="screen"/>
+
+	<!-- Node that is in charge of store and execute all the atomic actions of the Robot-->
+	<node pkg="teo_moveit" type="central_node" name="central_node" output="screen"/> 
+
+</launch>
+
+
