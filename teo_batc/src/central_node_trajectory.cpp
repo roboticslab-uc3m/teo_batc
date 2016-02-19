@@ -9,13 +9,8 @@
 #include <ros/ros.h>
 #include <moveit/planning_scene_monitor/planning_scene_monitor.h>
 #include <moveit/move_group_interface/move_group.h>
-#include <shape_tools/solid_primitive_dims.h>
-#include "teo_moveit/communication_srv.h"
-#include "teo_moveit/param.h"
-#include "teo_moveit/param_array.h"
-#include <teo_moveit/base_solution_srv.h>
-#include <teo_moveit/teo_task_template_srv.h>
-#include <teo_moveit/trajectory_gen_srv.h>
+#include <geometric_shapes/solid_primitive_dims.h>
+#include "teo_batc/trajectory_gen_srv.h"
 #include "worlds/worlds.h"
 
 
@@ -31,12 +26,12 @@ int main(int argc, char **argv)
   //Define the srv we will want to use
   //ros::ServiceClient base_solution_client = nh.serviceClient<teo_moveit::base_solution_srv>("base_solution");
   //ros::ServiceClient teo_task_template_client = nh.serviceClient<teo_moveit::teo_task_template_srv>("teo_task_template");
-  ros::ServiceClient trajectory_client = nh.serviceClient<teo_moveit::trajectory_gen_srv>("trajectory_gen");
+  ros::ServiceClient trajectory_client = nh.serviceClient<teo_batc::trajectory_gen_srv>("trajectory_gen");
 
   //Define srv variables
   //teo_moveit::base_solution_srv base_solution;
   //teo_moveit::teo_task_template_srv teo_task_template;
-  teo_moveit::trajectory_gen_srv trajectory_srv;
+  teo_batc::trajectory_gen_srv trajectory_srv;
   
   ROS_INFO("Waiting for Trajectory Service");
   ros::service::waitForService("trajectory_gen",-1);

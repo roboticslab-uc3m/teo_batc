@@ -6,6 +6,21 @@ ROS packages for TEO humanoid robot with Moveit! and the batc method.
 - The master branch is updated with the latest version of packages.
 - The development branch contains the main development of new versions.
 
+##Install
+This package is devoloped for the ROS INDIGO version, any different ROS version may not be supported. For the correct setup of the packages follow the next steps.
+1- Clone this repository in a catkin_workspace. See this totorial http://wiki.ros.org/catkin/Tutorials/create_a_workspace to create a catkin_workspace in ROS.
+2- Use rosdep to install all the needed dependencies
+```
+rosdep install teo_moveit
+```
+3- Compile the project with the following commands
+```
+cd "your_catkin_ws_route"
+
+catkin_make
+```
+
+
 ##Teo_moveit package
 This package contains several examples of the TEO humanoid robot using the state of the art software Moveit!. 
 

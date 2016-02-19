@@ -23,7 +23,7 @@ void init_world(ros::Publisher pub_co,  moveit_msgs::CollisionObject& co)
 
   co.primitives.resize(1);
   co.primitives[0].type = shape_msgs::SolidPrimitive::BOX;
-  co.primitives[0].dimensions.resize(shape_tools::SolidPrimitiveDimCount<shape_msgs::SolidPrimitive::BOX>::value);
+  co.primitives[0].dimensions.resize(geometric_shapes::SolidPrimitiveDimCount<shape_msgs::SolidPrimitive::BOX>::value);
   co.primitive_poses.resize(1);
 
   // Start the initialization of the environment
@@ -47,7 +47,7 @@ void init_world(ros::Publisher pub_co,  moveit_msgs::CollisionObject& co)
   //Cylinder object (cup)
   co.primitives.resize(1);
   co.primitives[0].type = shape_msgs::SolidPrimitive::CYLINDER;
-  co.primitives[0].dimensions.resize(shape_tools::SolidPrimitiveDimCount<shape_msgs::SolidPrimitive::CYLINDER>::value);
+  co.primitives[0].dimensions.resize(geometric_shapes::SolidPrimitiveDimCount<shape_msgs::SolidPrimitive::CYLINDER>::value);
   co.primitive_poses.resize(1);
 
   //add cylinder

@@ -11,7 +11,7 @@
 //MoveIt!
 #include <moveit/planning_scene_monitor/planning_scene_monitor.h>
 #include <moveit/move_group_interface/move_group.h>
-#include <shape_tools/solid_primitive_dims.h>
+#include <geometric_shapes/solid_primitive_dims.h>
 #include "teo_moveit/move_group_srv.h"
 #include "teo_moveit/pick_srv.h"
 #include "teo_moveit/place_srv.h"

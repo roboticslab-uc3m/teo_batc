@@ -3,7 +3,7 @@
 //MoveIt!
 #include <moveit/planning_scene_monitor/planning_scene_monitor.h>
 #include <moveit/move_group_interface/move_group.h>
-#include <shape_tools/solid_primitive_dims.h>
+#include <geometric_shapes/solid_primitive_dims.h>
 
 //Load the robot description
 static const std::string ROBOT_DESCRIPTION="robot_description";
@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 
   co.primitives.resize(1);
   co.primitives[0].type = shape_msgs::SolidPrimitive::BOX;
-  co.primitives[0].dimensions.resize(shape_tools::SolidPrimitiveDimCount<shape_msgs::SolidPrimitive::BOX>::value);
+  co.primitives[0].dimensions.resize(geometric_shapes::SolidPrimitiveDimCount<shape_msgs::SolidPrimitive::BOX>::value);
   co.primitive_poses.resize(1);
 
   /*

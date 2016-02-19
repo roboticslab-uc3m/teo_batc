@@ -10,7 +10,7 @@
 //MoveIt!
 #include <moveit/planning_scene_monitor/planning_scene_monitor.h>
 #include <moveit/move_group_interface/move_group.h>
-#include <shape_tools/solid_primitive_dims.h>
+#include <geometric_shapes/solid_primitive_dims.h>
 #include "teo_moveit/move_group_srv.h"
 #include "teo_moveit/pick_srv.h"
 #include "teo_moveit/place_srv.h"
@@ -44,64 +44,6 @@ int main(int argc, char **argv)
   moveit_msgs::CollisionObject co;
   init_world(pub_co, co);
 
-  //Define new variable for the collision objects (co).
-  //moveit_msgs::CollisionObject co;
-  //co.header.stamp = ros::Time::now();
-  //co.header.frame_id = "base_link";
-
-  /*
-  co.primitives.resize(1);
-  co.primitives[0].type = shape_msgs::SolidPrimitive::BOX;
-  co.primitives[0].dimensions.resize(shape_tools::SolidPrimitiveDimCount<shape_msgs::SolidPrimitive::BOX>::value);
-  co.primitive_poses.resize(1);
-
-  // Start the initialization of the environment
-  // remove table
-  co.id = "table";
-  co.operation = moveit_msgs::CollisionObject::REMOVE;
-  pub_co.publish(co);
-
-  // add table
-  co.operation = moveit_msgs::CollisionObject::ADD;
-  co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_X] = 0.45;
-  co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_Y] = 1.5;
-  co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_Z] = 0.1;
-  //co.primitive_poses[0].position.x = 0.7;
-  co.primitive_poses[0].position.x = 0.60;
-  //co.primitive_poses[0].position.y = -0.2;
-  co.primitive_poses[0].position.y = -0.1;
-  co.primitive_poses[0].position.z = 0.07;
-  pub_co.publish(co);
-
-  //Cylinder object (cup)
-  co.primitives.resize(1);
-  co.primitives[0].type = shape_msgs::SolidPrimitive::CYLINDER;
-  co.primitives[0].dimensions.resize(shape_tools::SolidPrimitiveDimCount<shape_msgs::SolidPrimitive::CYLINDER>::value);
-  co.primitive_poses.resize(1);
-
-  //add cylinder
-  co.id = "cup";
-  co.operation = moveit_msgs::CollisionObject::REMOVE;
-  pub_co.publish(co);
-
-  //Shape of the cup
-  co.operation = moveit_msgs::CollisionObject::ADD;
-  co.primitives[0].dimensions[shape_msgs::SolidPrimitive::CYLINDER_HEIGHT] = 0.15;
-  co.primitives[0].dimensions[shape_msgs::SolidPrimitive::CYLINDER_RADIUS] = 0.075;
-
-  //Position cup
-  co.primitive_poses[0].position.x = 0.44;
-  co.primitive_poses[0].position.y = -0.2;
-  co.primitive_poses[0].position.z = 0.20;
-
-  //Publish cup
-  pub_co.publish(co);
-
-  //attached object cup
-  moveit_msgs::AttachedCollisionObject aco;
-  aco.link_name = "r_wrist_pitch_link";
-  aco.object = co;
-  */
 
   // wait a bit for ros things to initialize
   ros::WallDuration(1.0).sleep();

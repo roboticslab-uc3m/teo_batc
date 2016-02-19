@@ -10,7 +10,7 @@
 //MoveIt!
 #include <moveit/planning_scene_monitor/planning_scene_monitor.h>
 #include <moveit/move_group_interface/move_group.h>
-#include <shape_tools/solid_primitive_dims.h>
+#include <geometric_shapes/solid_primitive_dims.h>
 #include "teo_moveit/move_group_srv.h"
 #include "teo_moveit/pick_srv.h"
 #include "teo_moveit/place_srv.h"
@@ -43,123 +43,6 @@ int main(int argc, char **argv)
   //TODO: BE ABLE TO INIT THE ENVIRONMENT AND PASS A CO OBJECT TO MAIN FROM A HEADER FILE
   moveit_msgs::CollisionObject co;
   init_world(pub_co, co);
-
-  /************************************************************ Environment setup******************************************************************************
-  //if (ros::isInitialize()==false)
-    //	ROS_ERROR("ROS HAS NOT BEEN INITIALIZED BEFORE THE CALL OF THIS FUNCTION (o-o^)");
-
-    //ros::NodeHandle nh;
-    //collision object pub
-    //ros::Publisher pub_co = nh.advertise<moveit_msgs::CollisionObject>("collision_object", 10);
-
-    //Define new variable for the table
-    moveit_msgs::CollisionObject co;
-
-    co.header.stamp = ros::Time::now();
-    co.header.frame_id = "base_link";
-
-    co.primitives.resize(1);
-    co.primitives[0].type = shape_msgs::SolidPrimitive::BOX;
-    co.primitives[0].dimensions.resize(shape_tools::SolidPrimitiveDimCount<shape_msgs::SolidPrimitive::BOX>::value);
-    co.primitive_poses.resize(1);
-
-    //Start the initialization of the environment
-    //remove table
-    co.id = "table";
-    //First we remove the old table
-    co.operation = moveit_msgs::CollisionObject::REMOVE;
-    pub_co.publish(co);
-
-    //add table
-    co.operation = moveit_msgs::CollisionObject::ADD;
-    co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_X] = 0.45;
-    co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_Y] = 1.5;
-    co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_Z] = 0.1;
-    //co.primitive_poses[0].position.x = 0.7;
-    co.primitive_poses[0].position.x = 0.60;
-    //co.primitive_poses[0].position.y = -0.2;
-    co.primitive_poses[0].position.y = -0.1;
-    co.primitive_poses[0].position.z = 0.07;
-
-    // add table
-    co.operation = moveit_msgs::CollisionObject::ADD;
-    pub_co.publish(co);
-
-
-    //****************************************************************************************************
-
-    //Define new variable for the water_can
-    //moveit_msgs::CollisionObject co;
-
-    co.header.stamp = ros::Time::now();
-    co.header.frame_id = "base_link";
-
-    //Cylinder object
-    co.primitives.resize(1);
-    co.primitives[0].type = shape_msgs::SolidPrimitive::CYLINDER;
-    co.primitives[0].dimensions.resize(shape_tools::SolidPrimitiveDimCount<shape_msgs::SolidPrimitive::CYLINDER>::value);
-    co.primitive_poses.resize(1);
-
-    //add cylinder
-    co.id = "water_can";
-    //First we remove
-    co.operation = moveit_msgs::CollisionObject::REMOVE;
-    pub_co.publish(co);
-
-
-    //Shape of the water can
-    co.primitives[0].dimensions[shape_msgs::SolidPrimitive::CYLINDER_HEIGHT] = 0.26;
-    co.primitives[0].dimensions[shape_msgs::SolidPrimitive::CYLINDER_RADIUS] = 0.12;
-
-    //Position cup
-    co.primitive_poses[0].position.x = 0.54;
-    co.primitive_poses[0].position.y = -0.5;
-    co.primitive_poses[0].position.z = 0.26;
-
-    //Then we add
-    co.operation = moveit_msgs::CollisionObject::ADD;
-    pub_co.publish(co);
-
-    //**********************************************************************************************************************************
-
-    //Define new variable for the Pot
-    //moveit_msgs::CollisionObject co;
-
-    co.header.stamp = ros::Time::now();
-    co.header.frame_id = "base_link";
-
-    //add cylinder (pot)
-    co.id = "plant_pot";
-    //First we remove
-    co.operation = moveit_msgs::CollisionObject::REMOVE;
-    pub_co.publish(co);
-
-    //Shape of the water can
-    co.operation = moveit_msgs::CollisionObject::ADD;
-    co.primitives[0].dimensions[shape_msgs::SolidPrimitive::CYLINDER_HEIGHT] = 0.80;
-    co.primitives[0].dimensions[shape_msgs::SolidPrimitive::CYLINDER_RADIUS] = 0.16;
-
-    //Position cup
-    co.primitive_poses[0].position.x = 0.1;
-    co.primitive_poses[0].position.y = -0.65;
-    co.primitive_poses[0].position.z = -0.46;
-
-    //Then we add
-    co.operation = moveit_msgs::CollisionObject::ADD;
-    pub_co.publish(co);
-
-    //attached object cup
-    //moveit_msgs::AttachedCollisionObject aco;
-    //aco.link_name = "r_wrist_pitch_link";
-    //aco.object = co;
-
-    ros::WallDuration(1.0).sleep();
-  /************************************************************ Environment setup END******************************************************************************/
-
-  //Define new variable for the collision objects (co).
-  //moveit_msgs::CollisionObject co;
-  //co.header.stamp = ros::Time::now();
-  //co.header.frame_id = "base_link";
 
   // wait a bit for ros things to initialize
   ros::WallDuration(1.0).sleep();
