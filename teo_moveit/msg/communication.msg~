@@ -1,8 +1,0 @@
-string task;
-string object;
-string atomic_task[20];
-string objeto[20];
-string entorno[20];
-string move_group[20];
-string pose[20];
-

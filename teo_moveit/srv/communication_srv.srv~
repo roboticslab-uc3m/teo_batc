@@ -1,9 +1,0 @@
----
-string high_task
-string object
-int64[] atomic_task
-string[] objeto
-string[] entorno
-string[] move_group
-string[] pose
-

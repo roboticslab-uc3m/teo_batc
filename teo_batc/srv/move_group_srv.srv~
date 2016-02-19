@@ -1,4 +1,0 @@
-string group_name
-geometry_msgs/PoseStamped p
-float64 pos_tolerance
-float64 ang_tolerance

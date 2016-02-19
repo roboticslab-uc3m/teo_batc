@@ -26,7 +26,7 @@ Once the system is initialized run the following command in a new terminal.
 rosrun teo_moveit water_plant_task 
 ```
 ###Drink coffee task example (Kitchen world)
-For running the example **water a plant** in the garden world, enter the following command in a terminal:
+For running the example **drink a coffee** in the kitchen world, enter the following command in a terminal:
 
 First init the teo and moveit system.
 

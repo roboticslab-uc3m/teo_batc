@@ -1,2 +1,0 @@
-string group_name
-moveit_msgs/CollisionObject pick_object
