@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 
   if (base_solution_client.call(base_solution))
   {
-    ROS_INFO("It should have move \(0u0)/");
+    ROS_INFO("It should have move (0u0*)");
   }
   else
   {
@@ -61,7 +61,7 @@ int main(int argc, char **argv)
   //Now we have a base_solution (param_array), so we will generate a new solution task.
   if (teo_task_template_client.call(teo_task_template))
   {
-    ROS_INFO("It should have move \(0u0)/");
+    ROS_INFO("It should have move (0u0*)");
   }
   else
   {
@@ -69,7 +69,7 @@ int main(int argc, char **argv)
     return 1;
   }
 
-  ROS_INFO("All processes should have finished \(0u0)/");
+  ROS_INFO("All processes should have finished (0u0*)");
   //We call the service base_solution
 
   //We call the service to generate a new task.

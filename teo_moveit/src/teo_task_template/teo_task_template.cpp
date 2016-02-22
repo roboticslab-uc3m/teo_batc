@@ -1,6 +1,6 @@
 /* Code for a move_group subtask part of the project "New task generation using old cases and a description of the task"
  *
- * Author: Raúl Fernández Fernández
+ * Author: Raúl Fernández Fernández (raulfernandezbis@gmail.com)
  *
  * The main goal of this code is to be a template for the automatic task generation of new tasks. The way this code works
  * is quite simple it just calls some service depending of some params that the ROS node send to it.
@@ -61,7 +61,7 @@ bool teo_task_template(teo_moveit::teo_task_template_srv::Request  &req, teo_mov
       //We call the service, and make sure it worked
       if (move_group_client.call(mg_srv))
         {
-            ROS_INFO("It should have move \(0u0)/");
+            ROS_INFO("It should have move (0u0*)");
         }
             else
         {
@@ -79,7 +79,7 @@ bool teo_task_template(teo_moveit::teo_task_template_srv::Request  &req, teo_mov
         //We call the service, and make sure it worked
         if (pick_client.call(pick_srv))
         {
-          ROS_INFO("It should have pick the object \(0u0)/");
+          ROS_INFO("It should have pick the object (0u0)*");
         }
         else
         {
@@ -97,7 +97,7 @@ bool teo_task_template(teo_moveit::teo_task_template_srv::Request  &req, teo_mov
         //We call the service, and make sure it worked
         if (place_client.call(place_srv))
         {
-          ROS_INFO("It should have pick the object \(0u0)/");
+          ROS_INFO("It should have pick the object (0u0*)");
         }
         else
         {

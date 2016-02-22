@@ -1,6 +1,6 @@
 /* Code part of the project "New task generation using old cases and a description of the task"
  *
- * Author: Raúl Fernández Fernández
+ * Author: Raúl Fernández Fernández (raulfernandezbis@gmail.com)
  *
  * This a header file for the initialization of a custom environment consisted in a table and a coffee cup.
  *

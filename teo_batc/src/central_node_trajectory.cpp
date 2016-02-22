@@ -1,6 +1,6 @@
 /* This code part of the project "New task generation for humanoid robots based on case and user communication"
  *
- * Author: Raúl Fernández Fernández(raulfernandezbis@gmail.com)
+ * Author: Raúl Fernández Fernández (raulfernandezbis@gmail.com)
  *
  * The goal of this node is to be the central node that is in charge to init and control the system.
  *
@@ -42,7 +42,7 @@ int main(int argc, char **argv)
   //The first thing we do is to do the communication form
   if (trajectory_client.call(trajectory_srv))
   {
-    ROS_INFO("It should have move \(0u0)/");
+    ROS_INFO("It should have move (0u0*)");
   }
   else
   {
@@ -50,39 +50,7 @@ int main(int argc, char **argv)
     return 1;
   }
 
-  /*
-  //The first thing we do is to do the communication form
-  //Call service
-  if (base_solution_client.call(base_solution))
-  {
-    ROS_INFO("It should have move \(0u0)/");
-  }
-  else
-  {
-    ROS_ERROR("Failed to call base_solution service (o-o^)");
-    return 1;
-  }
-
-  teo_task_template.request.param_array=base_solution.response.param_array;
-
-  //init the environment, we can modify init_world to init different environments from a parameter.
-  moveit_msgs::CollisionObject co;
-  init_world(pub_co, co, base_solution.response.param_array[0].world);
-
-  ros::WallDuration(10.0).sleep();
-
-  //Now we have a base_solution (param_array), so we will generate a new solution task.
-  if (teo_task_template_client.call(teo_task_template))
-  {
-    ROS_INFO("It should have move \(0u0)/");
-  }
-  else
-  {
-    ROS_ERROR("Failed to call teo_task_template service (o-o^)");
-    return 1;
-  }
-  */
-  ROS_INFO("All processes should have finished \(0u0)/");
+  ROS_INFO("All processes should have finished (0u0*)");
   //We call the service base_solution
 
   //We call the service to generate a new task.

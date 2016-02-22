@@ -3,21 +3,23 @@ teo_batc
 
 ROS packages for TEO humanoid robot with Moveit! and the batc method.
 
-- The master branch is updated with the latest version of packages.
-- The development branch contains the main development of new versions.
-
 ##Install
 This package is devoloped for the ROS INDIGO version, any different ROS version may not be supported. For the correct setup of the packages follow the next steps.
-1- Clone this repository in a catkin_workspace. See this totorial http://wiki.ros.org/catkin/Tutorials/create_a_workspace to create a catkin_workspace in ROS.
-2- Use rosdep to install all the needed dependencies
-```
-rosdep install teo_moveit
-```
-3- Compile the project with the following commands
-```
-cd "your_catkin_ws_route"
 
-catkin_make
+1. **Clone** this repository in a catkin_workspace. See this totorial <http://wiki.ros.org/catkin/Tutorials/create_a_workspace> to create a catkin_workspace in ROS.
+
+2. Use **rosdep** to install all the needed dependencies
+
+```
+		rosdep install teo_moveit
+```
+
+3. **Compile** the project with the following commands
+
+```
+		cd "your_catkin_ws_route"
+
+		catkin_make	
 ```
 
 
@@ -33,4 +35,4 @@ This package contains the implementation of a Base Trajectory Combination (**BAT
 A more detailed explanation about the package is given in the readme.md in the same package.
 
 ##teo_description
-Contains the urdf files for the TEO description in the ROS environment. This packege was extracted from <https://github.com/roboticslab-uc3m/teo_robot>
+Contains the urdf files for the TEO description in the ROS environment. This packege was extracted from <https://github.com/roboticslab-uc3m/teo_robot>he urdf files for the TEO description in the ROS environment. This packege was extracted from <https://github.com/roboticslab-uc3m/teo_robot>

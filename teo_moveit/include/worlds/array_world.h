@@ -1,6 +1,6 @@
 /* Code part of the project "New task generation using old cases and a description of the task"
  *
- * Author: Raúl Fernández Fernández
+ * Author: Raúl Fernández Fernández (raulfernandezbis@gmail.com)
  *
  * This a test header file to try to init the worl using arrays of collision object msgs.
  *

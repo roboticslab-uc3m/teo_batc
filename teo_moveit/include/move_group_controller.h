@@ -1,6 +1,6 @@
 /* Code for a move_group subtask part of the project "New task generation using old cases and a description of the task"
  *
- * Author: Raúl Fernández Fernández
+ * Author: Raúl Fernández Fernández (raulfernandezbis@gmail.com)
  *
  * This .h file creates a class with a move_group object that can be used between nodes.
  *

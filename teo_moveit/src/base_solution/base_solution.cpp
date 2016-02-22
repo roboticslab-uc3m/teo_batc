@@ -1,6 +1,6 @@
 /* Code for a move_group subtask part of the project "New task generation using old cases and a description of the task"
  *
- * Author: Raúl Fernández Fernández
+ * Author: Raúl Fernández Fernández (raulfernandezbis@gmail.com)
  *
  * The goal of this node is to generate the base solution for the CBR system, this service will use the comm info and the BDD info
  * to generate a base solution. NOTE: Its not the same as the adaptation node, though the adapt. node, also generate sol.
@@ -31,7 +31,7 @@ bool base_solution(teo_moveit::base_solution_srv::Request  &req, teo_moveit::bas
     //The first thing we do is to do the communication form
     if (communication_client.call(communication_srv))
     {
-      ROS_INFO("It should have move \(0u0)/");
+      ROS_INFO("It should have move (0u0*)");
     }
     else
     {

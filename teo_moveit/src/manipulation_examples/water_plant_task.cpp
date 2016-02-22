@@ -76,7 +76,8 @@ int main(int argc, char **argv)
   //We call the service, and make sure it worked
   if (move_group_client.call(mg_srv))
   {
-    ROS_INFO("It should have move \(0u0)/");
+    ROS_INFO("It should have move (0u0*)");
+
   }
   else
   {
@@ -91,7 +92,7 @@ int main(int argc, char **argv)
   //We call the service, and make sure it worked
   if (pick_client.call(pick_srv))
   {
-    ROS_INFO("It should have pick the object \(0u0)/");
+    ROS_INFO("It should have pick the object (0u0*)");
   }
   else
   {
@@ -119,7 +120,7 @@ int main(int argc, char **argv)
   //We call the service, and make sure it worked
   if (move_group_client.call(mg_srv))
   {
-    ROS_INFO("It should have move \(0u0)/");
+    ROS_INFO("It should have move (0u0*)");
   }
   else
   {
@@ -147,7 +148,7 @@ int main(int argc, char **argv)
   //We call the service, and make sure it worked
   if (move_group_client.call(mg_srv))
   {
-    ROS_INFO("It should have move \(0u0)/");
+    ROS_INFO("It should have move (0u0*)");
   }
   else
   {
@@ -175,7 +176,7 @@ int main(int argc, char **argv)
   //We call the service, and make sure it worked
   if (move_group_client.call(mg_srv))
   {
-    ROS_INFO("It should have move \(0u0)/");
+    ROS_INFO("It should have move (0u0*)");
   }
   else
   {
@@ -190,7 +191,7 @@ int main(int argc, char **argv)
   //We call the service, and make sure it worked
   if (place_client.call(place_srv))
   {
-    ROS_INFO("It should have place the object \(0u0)/");
+    ROS_INFO("It should have place the object (0u0*)");
   }
   else
   {
@@ -216,7 +217,7 @@ int main(int argc, char **argv)
   //We call the service, and make sure it worked
   if (move_group_client.call(mg_srv))
   {
-    ROS_INFO("It should have move \\(0u0)/");
+    ROS_INFO("It should have move (0u0*)");
   }
   else
   {
