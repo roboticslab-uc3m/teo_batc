@@ -12,15 +12,6 @@
 void init_world(ros::Publisher pub_co, moveit_msgs::CollisionObject& co, std::string world)
 {
     if(world=="garden"){
-	    //if (ros::isInitialize()==false)
-	    //	ROS_ERROR("ROS HAS NOT BEEN INITIALIZED BEFORE THE CALL OF THIS FUNCTION (o-o^)");
-
-	    //ros::NodeHandle nh;
-	    //collision object pub
-	    //ros::Publisher pub_co = nh.advertise<moveit_msgs::CollisionObject>("collision_object", 10);
-
-	    //Define new variable for the table
-	    //moveit_msgs::CollisionObject co;
 
 	    co.header.stamp = ros::Time::now();
 	    co.header.frame_id = "base_link";
@@ -42,9 +33,7 @@ void init_world(ros::Publisher pub_co, moveit_msgs::CollisionObject& co, std::st
 	    co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_X] = 0.45;
 	    co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_Y] = 1.5;
 	    co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_Z] = 0.1;
-	    //co.primitive_poses[0].position.x = 0.7;
 	    co.primitive_poses[0].position.x = 0.60;
-	    //co.primitive_poses[0].position.y = -0.2;
 	    co.primitive_poses[0].position.y = -0.1;
 	    co.primitive_poses[0].position.z = 0.07;
 
@@ -53,9 +42,6 @@ void init_world(ros::Publisher pub_co, moveit_msgs::CollisionObject& co, std::st
 	    pub_co.publish(co);
 
 	    /**********************************************************************************************************************************/
-
-	    //Define new variable for the Pot
-	    //moveit_msgs::CollisionObject co;
 
 	    co.header.stamp = ros::Time::now();
 	    co.header.frame_id = "base_link";
@@ -85,15 +71,9 @@ void init_world(ros::Publisher pub_co, moveit_msgs::CollisionObject& co, std::st
 	    co.operation = moveit_msgs::CollisionObject::ADD;
 	    pub_co.publish(co);
 
-	    //attached object cup
-	    //moveit_msgs::AttachedCollisionObject aco;
-	    //aco.link_name = "r_wrist_pitch_link";
-	    //aco.object = co;
-
 	    /****************************************************************************************************/
 
 	    //Define new variable for the water_can NOTE: The object we want to manipulate has to be the las one defined here. co overwrite problems.
-	    //moveit_msgs::CollisionObject co;
 
 	    co.header.stamp = ros::Time::now();
 	    co.header.frame_id = "base_link";
@@ -123,13 +103,7 @@ void init_world(ros::Publisher pub_co, moveit_msgs::CollisionObject& co, std::st
 	}
 
 	if(world=="kitchen"){
-		//if (ros::isInitialize()==false)
-		  //	ROS_ERROR("ROS HAS NOT BEEN INITIALIZED BEFORE THE CALL OF THIS FUNCTION (o-o^)");
-		  
-		  //ros::NodeHandle nh;
-		  //collision object pub
-		  //ros::Publisher pub_co = nh.advertise<moveit_msgs::CollisionObject>("collision_object", 10);
-		  
+
 		  co.header.stamp = ros::Time::now();
 		  co.header.frame_id = "base_link";
 
@@ -149,9 +123,7 @@ void init_world(ros::Publisher pub_co, moveit_msgs::CollisionObject& co, std::st
 		  co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_X] = 0.45;
 		  co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_Y] = 1.5;
 		  co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_Z] = 0.1;
-		  //co.primitive_poses[0].position.x = 0.7;
 		  co.primitive_poses[0].position.x = 0.60;
-		  //co.primitive_poses[0].position.y = -0.2;
 		  co.primitive_poses[0].position.y = -0.1;
 		  co.primitive_poses[0].position.z = 0.07;
 		  pub_co.publish(co);

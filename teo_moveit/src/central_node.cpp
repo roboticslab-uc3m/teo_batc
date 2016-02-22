@@ -70,10 +70,6 @@ int main(int argc, char **argv)
   }
 
   ROS_INFO("All processes should have finished (0u0*)");
-  //We call the service base_solution
-
-  //We call the service to generate a new task.
-
 
   ros::waitForShutdown();
 

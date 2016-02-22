@@ -34,26 +34,6 @@ int main(int argc, char **argv)
   co.primitives[0].dimensions.resize(geometric_shapes::SolidPrimitiveDimCount<shape_msgs::SolidPrimitive::BOX>::value);
   co.primitive_poses.resize(1);
 
-  /*
-  // remove pole
-  co.id = "pole";
-  co.operation = moveit_msgs::CollisionObject::REMOVE;
-  pub_co.publish(co);
-
-  // add pole
-  co.operation = moveit_msgs::CollisionObject::ADD;
-  co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_X] = 0.3;
-  co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_Y] = 0.1;
-  co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_Z] = 1.0;
-  //co.primitive_poses[0].position.x = 0.7;
-  co.primitive_poses[0].position.x = 0.6;
-  //co.primitive_poses[0].position.y = -0.4;
-  co.primitive_poses[0].position.y = -0.1;
-  co.primitive_poses[0].position.z = 0.85;
-  co.primitive_poses[0].orientation.w = 1.0;
-  pub_co.publish(co);
-  */
-
   // remove table
   co.id = "table";
   co.operation = moveit_msgs::CollisionObject::REMOVE;
@@ -64,9 +44,7 @@ int main(int argc, char **argv)
   co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_X] = 0.45;
   co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_Y] = 1.5;
   co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_Z] = 0.1;
-  //co.primitive_poses[0].position.x = 0.7;
   co.primitive_poses[0].position.x = 0.60;
-  //co.primitive_poses[0].position.y = -0.2;
   co.primitive_poses[0].position.y = -0.1;
   co.primitive_poses[0].position.z = 0.07;
   pub_co.publish(co);
@@ -78,9 +56,6 @@ int main(int argc, char **argv)
   pub_co.publish(co);
 
   co.operation = moveit_msgs::CollisionObject::ADD;
-  //co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_X] = 0.15;
-  //co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_Y] = 0.1;
-  //co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_Z] = 0.3;
   co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_X] = 0.1;
   co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_Y] = 0.15;
   co.primitives[0].dimensions[shape_msgs::SolidPrimitive::BOX_Z] = 0.15;

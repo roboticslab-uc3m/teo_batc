@@ -24,13 +24,9 @@ int main(int argc, char **argv)
   ros::Publisher pub_co = nh.advertise<moveit_msgs::CollisionObject>("collision_object", 10);
 
   //Define the srv we will want to use
-  //ros::ServiceClient base_solution_client = nh.serviceClient<teo_moveit::base_solution_srv>("base_solution");
-  //ros::ServiceClient teo_task_template_client = nh.serviceClient<teo_moveit::teo_task_template_srv>("teo_task_template");
   ros::ServiceClient trajectory_client = nh.serviceClient<teo_batc::trajectory_gen_srv>("trajectory_gen");
 
   //Define srv variables
-  //teo_moveit::base_solution_srv base_solution;
-  //teo_moveit::teo_task_template_srv teo_task_template;
   teo_batc::trajectory_gen_srv trajectory_srv;
   
   ROS_INFO("Waiting for Trajectory Service");
@@ -51,11 +47,6 @@ int main(int argc, char **argv)
   }
 
   ROS_INFO("All processes should have finished (0u0*)");
-  //We call the service base_solution
-
-  //We call the service to generate a new task.
-
-
   ros::waitForShutdown();
 
   return 0;

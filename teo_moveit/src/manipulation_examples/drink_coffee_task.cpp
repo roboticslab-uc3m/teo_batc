@@ -55,8 +55,6 @@ int main(int argc, char **argv)
   mg_srv.request.ang_tolerance=0.1;
 
   //The position of the manipulator relative to base_link for the cup pick
-  //Pos:0.41508; -0.44088; 0.37607
-  //Orientation: 0.32493; 0.00081521; -0.00032667; 0.94574
   p.pose.position.x = 0.41508;
   p.pose.position.y = -0.44088;
   p.pose.position.z = 0.37607;
@@ -104,8 +102,6 @@ int main(int argc, char **argv)
 
 
   //Move cup to mouth; Param important for this task mouth position.
-  //pos: 0.30532; -0.27516; 0.69567
-  //ori: 0.32091; 0.0044592; 0.0030924; 0.94709
   p.pose.position.x = 0.30532;
   p.pose.position.y = -0.27516;
   p.pose.position.z = 0.69567;
@@ -131,8 +127,6 @@ int main(int argc, char **argv)
   }
 
   //Drink coffe; Param important for this task mouth position. Note here only the orientation changes, the system has to learn from this
-  //pos: 0.29832; -0.27483; 0.6943
-  //ori: 0.29961; -0.10914; 0.34385; 0.88323
   p.pose.position.x = 0.30532;
   p.pose.position.y = -0.27516;
   p.pose.position.z = 0.69567;
@@ -158,8 +152,6 @@ int main(int argc, char **argv)
   }
 
   //Place cup
-  //pos: 0.45495; -0.24189; 0.37658
-  //ori: 0.33127; 0.02771; 0.076958; 0.93998
   p.pose.position.x = 0.45495;
   p.pose.position.y = -0.24189;
   p.pose.position.z = 0.37658;
@@ -199,12 +191,6 @@ int main(int argc, char **argv)
     return 1;
   }
 
-  /*
-  //Dettach object
-  group.detachObject("cup");
-  ROS_INFO("End of detaching");
-  */
-
   //Reset position
   p.pose.position.x = -0.019606;
   p.pose.position.y = -0.31503;
@@ -229,14 +215,6 @@ int main(int argc, char **argv)
     ROS_ERROR("Failed to call service (o-o^)");
     return 1;
   }
-
-  //move_group(group,p);
-
-
-  //ros::WallDuration(1.0).sleep();
-
-
-  //place(group);
 
   ros::WallDuration(1.0).sleep();
 

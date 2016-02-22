@@ -42,10 +42,6 @@ public:
    bool place_action(teo_moveit::place_srv::Request &req, teo_moveit::place_srv::Response &res);
 };
 
-//Global definition of the variable move_group
-//ros::init(argc, argv, "move_group_srv");
-//move_group_control move_group;
-
 bool move_group_control::move_group_action(teo_moveit::move_group_srv::Request &req, teo_moveit::move_group_srv::Response &res)
 {
   //We specify the moveit group we want to work with, using the class created for move_group

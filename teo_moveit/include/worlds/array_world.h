@@ -11,12 +11,7 @@
 
 void init_world(ros::Publisher pub_co,  teo_moveit::co_array& world_co)
 {
-  //if (ros::isInitialize()==false)
-  //	ROS_ERROR("ROS HAS NOT BEEN INITIALIZED BEFORE THE CALL OF THIS FUNCTION (o-o^)");
-  
-  //ros::NodeHandle nh;
-  //collision object pub
-  //ros::Publisher pub_co = nh.advertise<moveit_msgs::CollisionObject>("collision_object", 10);
+
   int i=0;
   
   world_co->co_array[i].header.stamp = ros::Time::now();

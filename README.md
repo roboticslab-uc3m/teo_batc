@@ -12,6 +12,8 @@ This package is devoloped for the ROS INDIGO version, any different ROS version 
 
 ```
 		rosdep install teo_moveit
+
+		rosdep install teo_moveit
 ```
 
 3. **Compile** the project with the following commands

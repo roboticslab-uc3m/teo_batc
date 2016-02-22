@@ -21,14 +21,13 @@ from scipy import interpolate
 from trajectory_memory import *
 
 def base_trajectory_gen(tf):
-    #First we define the feature array of th trajectories
-    #The feature array structurie [final_pos,intermediate_req(x_const?,y_const?...]
-    print("Estoy dentro de la funcion b_tr_gen")
+    print("Generating a base solution")
     #First we choose the 2 trajectories closer to the final solution
     count=0
     b_dis=[10000,10000]
     b_s=[1,2]
-    #this while goes through all the trajectories we have
+    #this while goes through all the trajectories we have.
+    #In this code we use the arrays defined in trajectory memory.
     while count<len(feature):
         feature_sum=map(sub,tf,feature[count])
         dis=math.sqrt(sum([x**2 for x in feature_sum])) #Euclidian distance
@@ -57,13 +56,7 @@ def base_trajectory_gen(tf):
     #Now we will generate the base solution as a wighted sum of the twotrajectories
     w1.append(b_dis[0]/(b_dis[0]+b_dis[1]))
     w2.append(b_dis[1]/(b_dis[0]+b_dis[1]))
-    print("las trayectorias cogidas como base son:",b_s[0], b_s[1])
+    print("The base trajectories are:",b_s[0], b_s[1])
     
-    #time=np.arange(0,4,1)
-    #plt.figure()
-    #plt.plot(time,pos_x1,'o',time, pos_x2, 'x', time_spline,pos_xf)
-    #plt.axis([0, 3.5, -1, 1])
-    #plt.title('X trajectory spline interpolation')
-    #plt.show()
     #We return the 2 trajectories and the weights that define our traj
     return(b_s,w1,w2)

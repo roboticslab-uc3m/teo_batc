@@ -67,24 +67,12 @@ bool base_solution(teo_moveit::base_solution_srv::Request  &req, teo_moveit::bas
     int i=0;
     teo_moveit::param data;
     //teo_moveit::param_array msg;
-    //std::cout<<"EL TAMAÑO DEL ARRAY ES"<<communication_srv.response.atomic_task.size();
     data.world=communication_srv.response.entorno[i];
     while (i<(communication_srv.response.atomic_task.size()-1)){
 
         //we define the first sub task
         data.task=communication_srv.response.atomic_task[i]; //Tarea 0, move_group
         data.group_name=communication_srv.response.move_group[i];
-        //data.world=communication_srv.response.entorno[i];
-        /*
-        data.p.header.frame_id = "base_link";
-        data.p.pose.position.x = 0.41508;
-        data.p.pose.position.y = -0.44088;
-        data.p.pose.position.z = 0.37607;
-        data.p.pose.orientation.x = 0.32493;
-        data.p.pose.orientation.y = 0.00081521;
-        data.p.pose.orientation.z = -0.00032667;
-        data.p.pose.orientation.w = 0.94574;
-        */
         if(communication_srv.response.pose[i]=="close_cup")
             data.p=p_taza;
         if(communication_srv.response.pose[i]=="close_mouth")

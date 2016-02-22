@@ -52,8 +52,6 @@ int main(int argc, char **argv)
   p.header.frame_id = "base_link";
 
   //The position of the manipulator relative to base_link for the water can pick is
-  //Pos: 0.19392; -0.53167; 0.22629
-  //Orientation: -0.47883; -0.5658; 0.43283; 0.51307
   p.pose.position.x = 0.19392;
   p.pose.position.y = -0.53167;
   p.pose.position.z = 0.22629;
@@ -102,8 +100,6 @@ int main(int argc, char **argv)
 
 
   //Move water_can to pot position; Param important for this task pot position.
-  //pos: 0.13308; -0.58622; 0.2414
-  //ori: -0.71151; -0.10409; -0.11445; 0.68543
   p.pose.position.x =0.13308;
   p.pose.position.y = -0.58622;
   p.pose.position.z = 0.2414;
@@ -128,10 +124,7 @@ int main(int argc, char **argv)
     return 1;
   }
 
-  //water plant: Param important for this task pot position. Note here only the orientation changes, the system has to learn from this
-  //pos: 0.072208; -0.68184; 0.27764
-  //ori: -0.54253; -0.12736; -0.094337; 0.82495
-  //modified y.orentation rto water the plan and .w to have the unity quaternion
+  //water plant: Param important for this task pot position.
   p.pose.position.x = 0.072208;
   p.pose.position.y = -0.68184;
   p.pose.position.z = 0.27764;
@@ -224,12 +217,6 @@ int main(int argc, char **argv)
     ROS_ERROR("Failed to call service (o-o^)");
     return 1;
   }
-
-  //move_group(group,p);
-
-  //ros::WallDuration(1.0).sleep();
-
-  //place(group );
 
   ros::WallDuration(1.0).sleep();
 

@@ -21,11 +21,13 @@ add_service_files(
   DIRECTORY srv 
   FILES
   trajectory_gen_srv.srv
+  move_group_srv.srv
 )
 
 generate_messages(
   DEPENDENCIES
   std_msgs
+  geometry_msgs
 )
 
 catkin_package(

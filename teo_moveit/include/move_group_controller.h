@@ -6,20 +6,6 @@
  *
  */
 
-
-// MoveIt!
-/*
-#include <moveit/planning_scene_monitor/planning_scene_monitor.h>
-#include <moveit/planning_scene_interface/planning_scene_interface.h>
-#include <moveit/move_group_interface/move_group.h>
-#include <shape_tools/solid_primitive_dims.h>
-#include <moveit_msgs/DisplayRobotState.h>
-#include <moveit_msgs/DisplayTrajectory.h>
-*/
-
-//Service include
-
-
 //Math
 #include <math.h>
 #include <iostream>

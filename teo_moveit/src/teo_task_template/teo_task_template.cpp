@@ -28,7 +28,6 @@ bool teo_task_template(teo_moveit::teo_task_template_srv::Request  &req, teo_mov
   //Define world
   ros::Publisher pub_co = nh.advertise<moveit_msgs::CollisionObject>("collision_object", 10);
   //Define de srv we will want to use
-  //task_services(){
   ros::ServiceClient move_group_client = nh.serviceClient<teo_moveit::move_group_srv>("move_group_srv");
   ros::ServiceClient pick_client = nh.serviceClient<teo_moveit::pick_srv>("pick_srv");
   ros::ServiceClient place_client = nh.serviceClient<teo_moveit::place_srv>("place_srv");
@@ -54,8 +53,6 @@ bool teo_task_template(teo_moveit::teo_task_template_srv::Request  &req, teo_mov
       //we call services for move_group
       mg_srv.request.group_name=req.param_array[i].group_name;
       mg_srv.request.p=req.param_array[i].p;
-      //mg_srv.request.comm.pos_tolerance=0.01;
-      //mg_srv.request.comm.ang_tolerance=0.1;
       mg_srv.request.pos_tolerance= req.param_array[i].pos_tolerance;
       mg_srv.request.ang_tolerance= req.param_array[i].ang_tolerance;
       //We call the service, and make sure it worked

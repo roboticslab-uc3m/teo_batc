@@ -72,9 +72,6 @@ add_executable(environment_setup src/environment_setup.cpp)
 target_link_libraries(environment_setup ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 install(TARGETS environment_setup DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
-#add_executable(tomar_cafe src/tomar_cafe.cpp)
-#target_link_libraries(tomar_cafe ${catkin_LIBRARIES} ${Boost_LIBRARIES})
-#install(TARGETS tomar_cafe DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 add_executable(drink_coffee_task src/manipulation_examples/drink_coffee_task.cpp)
 add_dependencies(drink_coffee_task ${PROJECT_NAME}_generate_messages_cpp)
@@ -115,12 +112,4 @@ add_executable(base_solution src/base_solution/base_solution.cpp)
 add_dependencies(base_solution ${PROJECT_NAME}_generate_messages_cpp)
 target_link_libraries(base_solution ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 install(TARGETS base_solution DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
-
-#add_executable(move_group src/move_group.cpp)
-#target_link_libraries(move_group ${catkin_LIBRARIES} ${Boost_LIBRARIES})
-#install(TARGETS move_group DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
-
-#add_executable(pick src/pick.cpp)
-#target_link_libraries(pick ${catkin_LIBRARIES} ${Boost_LIBRARIES})
-#install(TARGETS pick DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 

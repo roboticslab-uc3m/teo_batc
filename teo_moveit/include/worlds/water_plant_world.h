@@ -11,15 +11,6 @@
 
 void init_world(ros::Publisher pub_co, moveit_msgs::CollisionObject& co)
 {
-    //if (ros::isInitialize()==false)
-    //	ROS_ERROR("ROS HAS NOT BEEN INITIALIZED BEFORE THE CALL OF THIS FUNCTION (o-o^)");
-
-    //ros::NodeHandle nh;
-    //collision object pub
-    //ros::Publisher pub_co = nh.advertise<moveit_msgs::CollisionObject>("collision_object", 10);
-
-    //Define new variable for the table
-    //moveit_msgs::CollisionObject co;
 
     co.header.stamp = ros::Time::now();
     co.header.frame_id = "base_link";

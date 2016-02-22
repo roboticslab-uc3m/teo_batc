@@ -14,7 +14,7 @@ information will be send to the ”central node”, to be executed in the sim-
 ulation.
 '''
 import rospy
-from teo_moveit.srv import *
+from teo_batc.srv import *
 from geometry_msgs.msg import PoseStamped
 from std_msgs.msg import String
 import numpy as np
@@ -47,7 +47,7 @@ def trajectory_gen(req):
             #interval where the loop is, for example step=3 means that it is
             #between the states 3-4
             step=t//time_step
-            #print("el paso es")
+            #print("Next step is")
             step=int(step)
             #print(s_ox[b_s[0]][step])
             #print(s_ox[b_s[0]][step+1])
@@ -65,8 +65,7 @@ def trajectory_gen(req):
     else:
         print("First, lets generate the new trajectory")
         #First we call the base solution generation
-        #tf=[(pos_x2[-1]+pos_x1[-1])/2,(pos_y2[-1]+pos_y1[-1])/2,(pos_z2[-1]+pos_z1[-1])/2,(ori_x2[-1]+ori_x1[-1])/2,(ori_y2[-1]+ori_y1[-1]),(ori_z2[-1]+ori_z1[-1])/2,(ori_w2[-1]+ori_w1[-1])/2,0,0,0,0,0,0,0]
-     #Define the list where we gonna save the trajectory
+     	#Define the list where we gonna save the trajectory
         tf=[0.40788, -0.34028, 0.83533, 6.0216e-05, 0.90002, -6.8045e-05,
                 -0.43585, 0,0,0,0,0,0,0]
         pos_xf=[]
@@ -89,29 +88,19 @@ def trajectory_gen(req):
             p.pose.position.x= interpolate.splev(t,s_x[b_s[0]],der=0)*w1[0]+interpolate.splev(t,s_x[b_s[1]],der=0)*w2[0]
             p.pose.position.y= interpolate.splev(t,s_y[b_s[0]],der=0)*w1[1]+interpolate.splev(t,s_y[b_s[1]],der=0)*w2[1]
             p.pose.position.z= interpolate.splev(t,s_z[b_s[0]],der=0)*w1[2]+interpolate.splev(t,s_z[b_s[1]],der=0)*w2[2]
-            #We use the funcion slerp to calculate the new quaternion 
-           #print(p.pose.position.x)
-           #print(p.pose.position.y)
-           #print(p.pose.position.z)
-            """
-            #TODO Spline individual interpolation not work with 
-            quaternions so
-            i should find some other way to do this
-            """
-
+            
             '''
+	    In the next step we use the funcion slerp to calculate the new quaternion
             We get the orientation trajectories for the instant "i"
             and the base trajectories b_s[0]
             and b_s[1].
             The first step to do is to interpolate the different points
-            extracted from the trajectories '''
+            extracted from the trajectories 
+            '''
             #If we are in the last step the orienation is the same final state
             if t==3:
                 p1=[s_ox[b_s[0]][-1],s_oy[b_s[0]][-1],s_oz[b_s[0]][-1],s_ow[b_s[0]][-1]]
                 p2=[s_ox[b_s[1]][-1],s_oy[b_s[1]][-1],s_oz[b_s[1]][-1],s_ow[b_s[1]][-1]]
-                print("orientaciones finals")
-                print(p1)
-                print(p2)
             else:
                 #First we get what two points we need to interpolate. "step" will be the  
                 #interval where the loop is, for example step=3 means that it is
@@ -129,32 +118,15 @@ def trajectory_gen(req):
                 p21=[s_ox[b_s[1]][step+1],s_oy[b_s[1]][step+1],s_oz[b_s[1]][step+1],s_ow[b_s[1]][step+1]]
                 p2=interp(p20,p21,t-step)
                 #Now we interpolate using the weight assigned to each trajectory
-                #print("las trayectorias de las orientaciones son:")
-                #print(p1)
-                #print(p2)
                 p_ori=interp(p1,p2,w1[3])
-                #print(p_ori)
 
                 p.pose.orientation.x=p_ori[0];
                 p.pose.orientation.y=p_ori[1];
                 p.pose.orientation.z=p_ori[2];
                 p.pose.orientation.w=p_ori[3];
             #We call the service
-            '''
-            p.pose.position.x= interpolate.splev(t,s_x[2],der=0)
-            p.pose.position.y= interpolate.splev(t,s_y[2],der=0)
-            p.pose.position.z= interpolate.splev(t,s_z[2],der=0)
-            p10=[s_ox[b_s[0]][step],s_oy[b_s[0]][step],s_oz[b_s[0]][step],s_ow[b_s[0]][step]]
-            p11=[s_ox[b_s[0]][step+1],s_oy[b_s[0]][step+1],s_oz[b_s[0]][step+1],s_ow[b_s[0]][step+1]]
-            p1=interp(p10,p11,t-step) 
-            p.pose.orientation.x=p1[0]
-            p.pose.orientation.y=p1[1]
-            p.pose.orientation.z=p1[2]
-            p.pose.orientation.w=p1[3]
-            '''
-
             move_group_client(group_name, p, pos_tolerance, ang_tolerance)
-            #print("trayectoria 1 es:",pos_x1[t],pos_y1[t],pos_z1[t])
+            #print("Trajectory 1:",pos_x1[t],pos_y1[t],pos_z1[t])
             #print("tray 2 es:",pos_x2[t],pos_y2[t],pos_z2[t])
             #print("new trayectoria es",p)
             pos_xf.append(p.pose.position.x)
@@ -165,13 +137,10 @@ def trajectory_gen(req):
             ori_zf.append(p.pose.orientation.z)
             ori_wf.append(p.pose.orientation.w)
             count+=1
-    #Plot section (we plot the base trajectories and the result one)
-    time=np.arange(0,3+0.1,0.1)#t_inc
-    #print(time)
-    #print(pos_x[2])
-    
-    #Error of the result trajectory
+
+
     '''
+    #Error of the result trajectory
     tres_pos=[pos_xf[-1],pos_yf[-1],pos_zf[-1]]
     tres_ori=[ori_xf[-1],ori_yf[-1],ori_zf[-1],ori_wf[-1]]
     p.pose.position.x=tres_pos[0]
@@ -193,10 +162,10 @@ def trajectory_gen(req):
     dis=dis_pos+dis_ori*0.1
     print("El error es:")
     print(dis)
-
     '''
+
     #Uncomment for plots results.
-    
+    time=np.arange(0,3+0.1,0.1)#t_inc
     plt.figure()
     plt.plot(time,pos_x[b_s[0]],time,pos_x[b_s[1]],time,pos_xf)
     plt.axis([0, 3, -1.5, 1.5])
