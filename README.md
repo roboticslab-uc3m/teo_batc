@@ -37,4 +37,4 @@ This package contains the implementation of a Base Trajectory Combination (**BAT
 A more detailed explanation about the package is given in the readme.md in the same package.
 
 ##teo_description
-Contains the urdf files for the TEO description in the ROS environment. This packege was extracted from <https://github.com/roboticslab-uc3m/teo_robot>he urdf files for the TEO description in the ROS environment. This packege was extracted from <https://github.com/roboticslab-uc3m/teo_robot>t>
+Contains the urdf files for the TEO description in the ROS environment. This packege was extracted from <https://github.com/roboticslab-uc3m/teo_robot>.
