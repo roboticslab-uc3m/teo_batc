@@ -8,21 +8,21 @@ This package is devoloped for the ROS INDIGO version, any different ROS version 
 
 1. **Clone** this repository in a catkin_workspace. See this totorial <http://wiki.ros.org/catkin/Tutorials/create_a_workspace> to create a catkin_workspace in ROS.
 
-2. Use **rosdep** to install all the needed dependencies
+2. Use **rosdep** to install all the needed dependencies. You also need to have installed the **teo-ros-simulation** (<https://github.com/roboticslab-uc3m/teo-ros-simulation>) repository, in your computer.
 
-```
+	```
 		rosdep install teo_moveit
 
 		rosdep install teo_batc
-```
+	```
 
 3. **Compile** the project with the following commands
 
-```
+	```
 		cd "your_catkin_ws_route"
 
 		catkin_make	
-```
+	```
 
 
 ##Teo_moveit package
