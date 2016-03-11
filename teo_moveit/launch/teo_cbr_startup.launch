@@ -5,7 +5,7 @@
 	 The main goal of this code is just launch all the node for the system -->
 
 	<!-- Startup TEO with moveit -->
-	<include file="$(find Teo_moveit_config)/launch/demo.launch"/>
+	<include file="$(find teo_moveit_config)/launch/demo.launch"/>
 
 	<!-- Node that is in charge of store and execute all the atomic actions of the Robot -->
 	<node pkg="teo_moveit" type="atomic_task_memory" name="atomic_task_memory" output="screen"/>

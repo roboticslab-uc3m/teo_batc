@@ -1,14 +1,14 @@
 #teo_moveit
 This package contains several examples of the TEO humanoid robot using the state of the art software Moveit!. 
 
-**Note: Teo_moveit_config** is the generated package using the moveit! assistant, for the correct TEO configuration in Moveit!. Additional info about this assistant can be found in <http://docs.ros.org/hydro/api/moveit_setup_assistant/html/doc/tutorial.html>.
+**Note: teo_moveit_config** is the generated package using the moveit! assistant, for the correct TEO configuration in Moveit!. Additional info about this assistant can be found in <http://docs.ros.org/hydro/api/moveit_setup_assistant/html/doc/tutorial.html>.
 
 ##Moveit! manipulation examples
 ###Basic world
 To run a **basic scenario** using Moveit! and TEO, use the following command.
 
 ```
-roslaunch Teo_moveit_config demo.launch
+roslaunch teo_moveit_config demo.launch
 ```
 
 **Important note:** In this first version the reset of the system when calling a new one is not implemented, so for changing between the different worlds, the previous reset of the Moveit! environment, is recommended. If this is not done the worlds will overlap.

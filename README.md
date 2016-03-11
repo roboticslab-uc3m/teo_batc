@@ -28,7 +28,7 @@ This package is devoloped for the ROS INDIGO version, any different ROS version 
 ##Teo_moveit package
 This package contains several examples of the TEO humanoid robot using the state of the art software Moveit!. 
 
-**Note: Teo_moveit_config** is the generated package using the moveit! assistant, for the correct TEO configuration in Moveit!. Additional info about this assistant can be found in <http://docs.ros.org/hydro/api/moveit_setup_assistant/html/doc/tutorial.html>.
+**Note: teo_moveit_config** is the generated package using the moveit! assistant, for the correct TEO configuration in Moveit!. Additional info about this assistant can be found in <http://docs.ros.org/hydro/api/moveit_setup_assistant/html/doc/tutorial.html>.
 
 For further documentation about this package take a look at the readme.md in its repository.
 ##teo_batc
