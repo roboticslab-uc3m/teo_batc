@@ -35,3 +35,6 @@ For further documentation about this package take a look at the readme.md in its
 This package contains the implementation of a Base Trajectory Combination (**BATC**) system. A novel method for the **combination of different trajectories in the robot memory, to generate of a new one**. Developed in the project "new task generation for humanoid robots based on case retrieval and user communication". 
 
 A more detailed explanation about the package is given in the readme.md in the same package.
+
+###TODO
+- [ ] Update the Moveit configuration with the new TEO model modified in [teo-ros-simulation](https://github.com/roboticslab-uc3m/teo-ros-simulation/commit/a6199bc965c44919686355d27d876d9e002fa77c)..
