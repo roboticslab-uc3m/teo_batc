@@ -35,8 +35,8 @@ def trajectory_gen(req):
         p=PoseStamped()
         p.header.frame_id = "base_link"
         group_name= "right_arm"
-        pos_tolerance= 0.01
-        ang_tolerance= 0.01
+        pos_tolerance= 0.3
+        ang_tolerance= 0.3
         t_inc=0.1
         for t in np.arange(0,3,t_inc):
             p.pose.position.x = interpolate.splev(t,s_x[req.i[0]],der=0)
@@ -79,8 +79,8 @@ def trajectory_gen(req):
         p=PoseStamped()
         p.header.frame_id = "base_link"
         group_name= "right_arm"
-        pos_tolerance= 0.05
-        ang_tolerance= 0.05
+        pos_tolerance= 0.35
+        ang_tolerance= 0.35
         count=0
         t_inc=0.1
         for t in np.arange(0,3+t_inc,t_inc):
