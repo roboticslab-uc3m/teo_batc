@@ -5,4 +5,4 @@ moveit_setup_assistant_config:
   SRDF:
     relative_path: config/teo.srdf
   CONFIG:
-    generated_timestamp: 1457691705
+    generated_timestamp: 1464097626
