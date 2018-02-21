@@ -1,10 +1,10 @@
-#teo_moveit
+# teo_moveit
 This package contains several examples of the TEO humanoid robot using the state of the art software Moveit!. 
 
 **Note: teo_moveit_config** is the generated package using the moveit! assistant, for the correct TEO configuration in Moveit!. Additional info about this assistant can be found in <http://docs.ros.org/hydro/api/moveit_setup_assistant/html/doc/tutorial.html>.
 
-##Moveit! manipulation examples
-###Basic world
+## Moveit! manipulation examples
+### Basic world
 To run a **basic scenario** using Moveit! and TEO, use the following command.
 
 ```
@@ -25,7 +25,7 @@ Once the system is initialized run the following command in a new terminal.
 ```
 rosrun teo_moveit water_plant_task 
 ```
-###Drink coffee task example (Kitchen world)
+### Drink coffee task example (Kitchen world)
 For running the example **drink a coffee** in the kitchen world, enter the following command in a terminal:
 
 First init the teo and moveit system.
@@ -38,7 +38,7 @@ Once the system is initialized run the following command in a new terminal.
 ```
 rosrun teo_moveit drink_coffee_task
 ```
-###CBR system
+### CBR system
 
 In addition of this examples this package is intended to be a base for the future development of a CBR system for robotics. This way a planification and communication step are implemented using the basic structure of a CBR system. **This system allow us to communicate new tasks to the system, and later be executed in Moveit!.**
 
