@@ -1,4 +1,4 @@
-#teo_batc
+# teo_batc
 
 This package contains the implementation of a Base Trajectory Combination (**BATC**) system. A novel method for the **combination of different trajectories in the robot memory, to generate of a new one**. Developed in the project "new task generation for humanoid robots based on case retrieval and user communication". 
 
