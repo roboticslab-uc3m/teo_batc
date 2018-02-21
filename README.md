@@ -3,7 +3,7 @@ teo_batc
 
 ROS packages for TEO humanoid robot with Moveit! and the batc method.
 
-##Install
+## Install
 This package is devoloped for the ROS INDIGO version, any different ROS version may not be supported. For the correct setup of the packages follow the next steps.
 
 1. **Clone** this repository in a catkin_workspace. See this totorial <http://wiki.ros.org/catkin/Tutorials/create_a_workspace> to create a catkin_workspace in ROS.
@@ -25,7 +25,7 @@ This package is devoloped for the ROS INDIGO version, any different ROS version 
 	```
 
 
-##Teo_moveit package
+## Teo_moveit package
 This package contains several examples of the TEO humanoid robot using the state of the art software Moveit!. 
 
 **Note: teo_moveit_config** is the generated package using the moveit! assistant, for the correct TEO configuration in Moveit!. Additional info about this assistant can be found in <http://docs.ros.org/hydro/api/moveit_setup_assistant/html/doc/tutorial.html>.
